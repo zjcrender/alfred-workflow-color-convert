@@ -1,6 +1,6 @@
 {
   "name": "alfred-workflow-color-convert",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "convert input to CSS colors",
   "main": "dist/color.js",
   "scripts": {
