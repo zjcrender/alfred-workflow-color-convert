@@ -1,4 +1,4 @@
-import { CACHE_DIR } from '../consts';
+import { DATA_DIR } from '../consts';
 import { isFile, mkdirIfNotExist, writeFile } from './file';
 import type { Instance } from "tinycolor2";
 import pngLib from '../pnglib';
@@ -6,11 +6,12 @@ import path from 'node:path';
 
 const SIZE = 100;
 
-mkdirIfNotExist(CACHE_DIR);
+mkdirIfNotExist(DATA_DIR);
 export function makeIcon(color: Instance) {
+  if (!DATA_DIR) return 'icon.png';
 
   const hex = color.toHex8String().replace(/^#/, '');
-  const filePath = path.join(CACHE_DIR, `${ hex }.png`);
+  const filePath = path.join(DATA_DIR, `${ hex }.png`);
 
   if (!isFile(filePath)) {
     const { r, g, b, a } = color.toRgb();

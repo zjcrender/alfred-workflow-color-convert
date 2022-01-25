@@ -2,7 +2,8 @@ import type { WriteFileOptions } from "fs";
 import fs from "node:fs";
 
 export function mkdirIfNotExist(dir: string) {
-  if (!fs.existsSync(dir)){
+  if (!dir) return;
+  if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir, { recursive: true });
   }
 }

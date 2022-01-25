@@ -1,8 +1,15 @@
-import path from "node:path";
+import type { ScriptEnvironmentVariables } from 'alfred-types'
 
-const ENV = process.env;
+const ENV = process.env as ScriptEnvironmentVariables;
 
-export const BUNDLEID = ENV.alfred_workflow_bundleid || 'ink.render.color-convert';
+let BUNDLE_ID: string;
+let DATA_DIR: string;
+if ('alfred_workflow_bundleid' in ENV) {
+  BUNDLE_ID = ENV.alfred_workflow_bundleid;
+  DATA_DIR = ENV.alfred_workflow_data
+}
 
-export const CACHE_DIR = ENV.alfred_workflow_cache || path.join('~', `Library/Caches/com.runningwithcrayons.Alfred/Workflow Data/${ BUNDLEID }`);
-
+export {
+  BUNDLE_ID,
+  DATA_DIR
+}
