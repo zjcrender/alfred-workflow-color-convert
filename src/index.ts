@@ -13,10 +13,9 @@ outout.items = isNamedColor
 
 if (outout.items.length === 0) {
   outout.items.push({
-    uid: 'invalid',
     title: 'No Result',
-    subtitle: 'Action this item to open the OS X color panel',
-    arg: 'invalid'
+    subtitle: 'Enter the correct color, plz',
+    valid: false,
   })
 }
 
