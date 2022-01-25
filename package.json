@@ -5,6 +5,7 @@
   "main": "dist/color.js",
   "scripts": {
     "dev": "ts-node --files src/index.ts",
+    "dev:dist": "node dist/color.js",
     "build": "rollup --config rollup.config.ts --configPlugin typescript"
   },
   "repository": {

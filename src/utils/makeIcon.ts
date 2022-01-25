@@ -1,8 +1,8 @@
 import { CACHE_DIR } from '../consts';
 import { isFile, mkdirIfNotExist, writeFile } from './file';
 import type { Instance } from "tinycolor2";
-import * as pngLib from '../pnglib';
-import * as path from 'node:path';
+import pngLib from '../pnglib';
+import path from 'node:path';
 
 const SIZE = 100;
 
