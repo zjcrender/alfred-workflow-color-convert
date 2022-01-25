@@ -1,5 +1,5 @@
 import { ScriptFilterItem } from "alfred-types";
-import * as tinyColor from "tinycolor2";
+import tinyColor from "tinycolor2";
 import { makeIcon } from "./utils/makeIcon";
 
 export type ColorType = 'rgb' | 'hsl' | 'hex' | 'named';

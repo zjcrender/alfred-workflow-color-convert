@@ -1,12 +1,12 @@
 import { CACHE_DIR } from '../consts';
 import { isFile, mkdirIfNotExist, writeFile } from './file';
 import type { Instance } from "tinycolor2";
-import * as pngLib from 'pnglib';
-
-const path = require('path');
+import * as pngLib from '../pnglib';
+import * as path from 'node:path';
 
 const SIZE = 100;
 
+mkdirIfNotExist(CACHE_DIR);
 export function makeIcon(color: Instance) {
 
   const hex = color.toHex8String().replace(/^#/, '');
@@ -23,7 +23,6 @@ export function makeIcon(color: Instance) {
       }
     }
 
-    mkdirIfNotExist(CACHE_DIR);
     writeFile(
       filePath,
       img.getBase64(),

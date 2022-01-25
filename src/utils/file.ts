@@ -1,6 +1,5 @@
 import type { WriteFileOptions } from "fs";
-
-const fs = require('fs');
+import * as fs from "node:fs";
 
 export function mkdirIfNotExist(dir: string) {
   if (!fs.existsSync(dir)){
